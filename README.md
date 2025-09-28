@@ -1,4 +1,6 @@
 # Sistema de Gestión de Tareas con API REST y Cliente de Consola
+Alumna: Ayelen Rojas
+Comisión: E - 2do cuatrimestre 2025
 
 Este proyecto implementa una API REST simple utilizando Flask para gestionar usuarios y sus tareas. Incluye un cliente de consola interactivo para facilitar el uso de la API.
 
