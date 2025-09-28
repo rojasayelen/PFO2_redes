@@ -87,17 +87,17 @@ def login():
 @app.route('/tareas', methods=['POST'])
 def create_task():
     data = request.get_json()
-    if not data or 'titulo' not in data or 'user_id' not in data:
-        return jsonify({'message': 'Faltan datos: se requiere título y user_id'}), 400
+    if not data or 'title' not in data or 'user_id' not in data:
+        return jsonify({'message': 'Faltan datos: se requiere title y user_id'}), 400
 
-    title = data['titulo']
-    description = data.get('descripcion', '')
+    title = data['title']
+    description = data.get('description', '')
     user_id = data['user_id']
 
     conn = get_db_connection()
     try:
         conn.execute(
-            'INSERT INTO tasks (titulo, descripcion, user_id) VALUES (?, ?, ?)',
+            'INSERT INTO tasks (title, description, user_id) VALUES (?, ?, ?)',
             (title, description, user_id)
         )
         conn.commit() # Explicitly commit the transaction
@@ -112,7 +112,7 @@ def create_task():
 @app.route('/tareas/<int:user_id>', methods=['GET'])
 def get_tasks(user_id):
     conn = get_db_connection()
-    tasks_cursor = conn.execute('SELECT id, titulo, descripcion, status FROM tareas WHERE user_id = ?', (user_id,)).fetchall()
+    tasks_cursor = conn.execute('SELECT id, title, description, status FROM tasks WHERE user_id = ?', (user_id,)).fetchall()
     conn.close()
 
     tasks = [dict(row) for row in tasks_cursor]

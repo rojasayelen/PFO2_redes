@@ -71,3 +71,19 @@ Una vez que el cliente está en marcha, verás un menú que te permitirá:
 | :--- | :--- | :--- | :--- | :--- |
 | `/tareas` | `POST` | Crea una nueva tarea. | `{"title": "t", "description": "d", "user_id": 1}` | `{"message": "Tarea creada..."}` |
 | `/tareas/<id>`| `GET` | Obtiene todas las tareas de un usuario. | (Ninguno) | `[{"id": 1, "title": "t", ...}]` |
+
+## Ejemplos de Uso
+
+A continuación se muestran algunas capturas de pantalla del cliente de consola en acción.
+
+### Registro de Usuario
+![Registro de usuario exitoso](screenShots/Registro_usuario_exitoso.png)
+
+### Inicio de Sesión
+![Login exitoso](screenShots/Login_exitoso.png)
+
+### Crear Tarea
+![Crear tarea exitosa](screenShots/Crear_tarea_exitoso.png)
+
+### Consultar Tareas
+![Consultar tareas exitoso](screenShots/Consultar_tarea_exitoso.png)
